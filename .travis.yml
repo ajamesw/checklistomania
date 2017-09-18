@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+    - 0.12
+before_script:
+    - "npm i -g jasmine-node"
+    - "sleep 5"
+script:
+    - "npm test"
+    - "npm run-script coverage"
+after_success:
+    - "npm run-script coveralls"
+env:
+    - GITHUB_CLIENT_ID=test GITHUB_CLIENT_SECRET=testSecret SESSION_SECRET=testSessionSecret
+services:
+  - mongodb

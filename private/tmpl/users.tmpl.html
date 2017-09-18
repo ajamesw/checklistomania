@@ -1,0 +1,43 @@
+
+  <md-content class="md-padding">
+    <div class="md-display-1">Users <md-button ng-click="showAddUserDialog($event)">Add User</md-button></div>
+    <md-card ng-repeat="user in users">
+      <md-card-title>
+        <md-card-title-text> <span class="md-headline">{{ user.fullName }}</span>
+ <span class="md-subhead"
+          ng-show="user.earliestDueDate.getFullYear() < 3000">next due date: {{user.earliestDueDate.toLocaleDateString()}}</span>
+
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-sm card-media userImg" ng-class="user.trafficLight">
+            <img src="{{ user.imgUrl }}">
+          </div>
+        </md-card-title-media>
+      </md-card-title>
+      <md-card-content ng-show="user.expanded">
+        <p ng-show="user.items.length == 0">User has no tasks.</p>
+        <md-table-container>
+        <table ng-show="user.items.length > 0" class="md-primary md-table" md-row-select="selected" md-progress="deferred">
+          <thead class="md-head">
+            <tr class="md-row">
+              <th class="md-column" ng-class="item.trafficLight">Due Date</th>
+              <th class="md-column">Checklist</th>
+              <th class="md-column">Item</th>
+            </tr>
+          </thead>
+          <tbody class="md-body">
+            <tr class="md-row" ng-repeat="item in user.items" ng-class="item.trafficLight">
+              <td class="md-cell" ng-show="item.dueDate">{{ item.dueDate.toLocaleDateString() }} ({{ item.daysUntilDue }} days)</td>
+              <td class="md-cell" ng-show="!item.dueDate">Not yet actionable</td>
+              <td class="md-cell">{{ item.checklistName }}</td>
+              <td class="md-cell">{{ item.displayName }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-show="!user.expanded" ng-click="getUserDetails(user)">View Tasks</md-button>
+        <md-button ng-show="user.expanded" ng-click="user.expanded = false">Collapse</md-button>
+      </md-card-actions>
+    </md-card>
+  </md-content>

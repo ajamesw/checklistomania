@@ -1,0 +1,7 @@
+node_modules/*
+api/.DS_Store
+npm-debug.log
+.DS_Store
+cf-ssh.yml
+coverage/*
+public/bower_components/*

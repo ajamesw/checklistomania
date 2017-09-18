@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <title>Checklistomania</title>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="/bower_components/angular-material/angular-material.min.js"></script>
+    <script src="/private/js/app.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="/private/css/app.css">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/private/css/md-data-table.css">
+  </head>
+  
+  <body ng-app="app" ng-controller="todoCtrl">
+    <div class="md-display-1 todoHeader"><span><img src="/private/img/logo-18f.png" height="40" width="40"></span> Checklistomania</div>
+    <div
+    class="tabsdemoDynamicHeight">
+      <md-content>
+        <md-tabs md-dynamic-height="" md-border-bottom="" md-selected="tabDefaultIndex">
+          <md-tab label="Tasks"><ng-include src="'tmpl/tasks.tmpl.html'"></ng-include></md-tab>
+          <md-tab label="checklists"><ng-include src="'tmpl/checklists.tmpl.html'"></ng-include></md-tab>
+          <md-tab label="users"><ng-include src="'tmpl/users.tmpl.html'"></ng-include></md-tab>
+        </md-tabs>
+      </md-content>
+      </div>
+  </body>
+
+</html>

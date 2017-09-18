@@ -1,0 +1,65 @@
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+
+.todoHeader {
+  background-color: #18F;
+  color: white;
+}
+
+.toggleView {
+  font-size: .5em;
+  color: gray;
+}
+
+ .trafficLight {
+	border-radius: 15px;
+	text-align: center;
+	border: 3px solid black;
+ }
+
+ .userImg {
+  padding: 8px;
+  border: 1px solid black;
+ }
+
+ #tableTrafficLight {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0px;
+ }
+ .redLight {
+ 	background-color: rgba(255,0,0,0.2);
+ }
+
+ .yellowLight {
+ 	background-color: rgba(255,255,0,0.2);
+ }
+
+ .greenLight {
+ 	background-color: rgba(0,255,0,0.2);
+ }
+
+ .greyLight {
+  background-color: rgba(0, 0, 0, .2);
+ }
+
+ .clearLight {
+  background-color: rgba(255, 255, 255, .05);
+  text-decoration: line-through;
+ }
+
+.md-cell {
+  min-width: 10em;
+  text-align: center;
+ }
+
+ .markDoneCheck {
+  font-size: 28px;
+ }
